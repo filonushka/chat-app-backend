@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose
-  .connect(
-    "mongodb+srv://admin:admin@cluster0.zubpkej.mongodb.net/chat-app?retryWrites=true&w=majority"
-  )
+  .connect(process.env.DB_URL)
   .then(() => {
     console.log("DB is OK");
   })
